@@ -1,0 +1,357 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400;700&display=swap');
+
+
+:root {
+    --light-grey: #3c3c44;
+    --transprent-light: rgba(24 , 24, 27, 0.8);
+    --transprent:  rgba(42, 43, 42, 0.418);
+    --white: #ffff;
+    --grey: #fe2626;
+    --red-transprent: rgba(255, 0, 0, 0.6);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    background: url("img/weather-earth.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: 'Poppins', sans-serif;
+    color: var(--white);
+    min-height: 100vh;
+    
+}
+.container{
+    margin: 5%;
+    width: 100%;
+    align-items: center;
+    padding: auto;
+}
+.forecast-container
+{
+    display:grid;
+}
+.container .search_wrapper
+{
+    color:rgb(0, 60, 255);
+    font-size: 40px;
+    font-weight: 100;
+    padding-top: 30px;
+    padding-left: 155px;
+    padding-right: 150px;
+    font-style:initial;
+    box-shadow: 3px 11px 8px 19px rgb(94, 94, 114);
+    /* margin-top: 190px; */
+    margin-left: 35%;
+    margin-right: 35%;
+   
+}
+.container .search_wrapper .input-container
+{
+    padding:40px;
+    text-align: center;
+    
+    
+}
+.container .search_wrapper .input-container input{
+    width: 300px;
+    padding : 15px;
+    font-size: large;
+    font-weight: 999;
+    text-align: center;
+    
+
+}
+
+.container .search_wrapper .input-container .btn
+{
+    size: 10px;
+    font-family: 'Courier New', Courier, monospace;
+    
+}
+
+
+h1{
+    width: 100%;
+    font-size: 1.5rem;
+    text-align: center;
+    font-weight: 400;
+    text-transform: capitalize;
+    letter-spacing: .3rem;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    padding: 30px;   
+    align-items: center;
+}
+
+
+
+
+
+.container .search_wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-top: 50%;
+    padding: 15px 15px;
+}
+.container.active .search_wrapper{
+    display: none;
+}
+.search_wrapper .input-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    width: 100%;
+}
+.search_wrapper .input-container input {
+    background: var(--transprent-light);
+    color: var(--white);
+    padding: 10px 15px;
+    width: 100%;
+    border: none;
+    font-size: 1rem;
+}
+.search_wrapper .input-container input:focus {
+    border: none;
+    outline: none;
+}
+.search_wrapper .input-container .btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+.search_wrapper .input-container .btn i {
+    font-size: 2rem;
+    margin: 10px;
+    color: var(--white);
+}
+
+.search_wrapper .error-container .error-text {
+    font-size: .8rem;
+    font-weight: 400;
+    letter-spacing: .2rem;
+    text-transform: capitalize;
+}
+.error-text.error {
+    color: var(--white);
+    background: var(--red-transprent);
+    padding: 10px 25px;
+    border-radius: 8px;
+}
+.error-text.wait {
+    color: var(--white);
+    padding: 10px 25px;
+    background: var(--transprent);
+    border-radius: 8px;     
+}
+.container .current  {
+    justify-content: space-between;
+    /* background-color: #3c3c44; */
+}
+.date-container .time {
+    font-size: 5rem;
+    font-weight: 100;
+}
+.date-container .time  #am-pm {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+}
+.date-container .date {
+    font-size: 1.7rem;
+}
+.place {
+    text-align: center;
+    display: none;
+    flex-direction: column;
+    background-color: var(--transprent);
+    padding: 10px;
+    border: solid 2px;
+    border-radius: 25px;
+}
+.container.active .place {
+    display: flex;
+}
+.place .time-zone{
+    font-size: 2rem;
+    font-weight: 100;
+}
+.place .country {
+    font-size: 1rem;
+    font-weight: 700;
+}
+.container .current {
+    display: none;
+    width: 100%;
+}
+.container.active .current{
+    display: flex;
+    /* width: 100%; */
+    
+}
+.current .others  {
+    display: flex;
+    flex-direction: column;
+    column-width: 35%;
+    width: 100%;
+    font-size: 1rem;
+    font-weight: 200;
+    text-transform: capitalize;
+    background-color: var(--transprent);
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px 0px ;
+}
+
+.current .others .weather-condition-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    font-size: 1.5rem;
+    margin: 15px;
+}
+.current .others .weather-condition-container .weather-condition-wrapper .weather-condition{
+    width: 200px;
+}
+.current .others .other-details {
+    display: flex;
+    margin-right: 20%;
+    flex-direction: column;
+    padding: 20px;
+}
+.others .other-details .grid-left, .grid-right {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+.others .other-details .grid-left .spaced-content {
+    display: flex;
+    width: 400px;
+    justify-content: space-between;
+    
+}
+.others .other-details .grid-left .spaced-content div{
+    width: 50%;
+}
+.others .other-details .grid-right .spaced-content {
+    display: flex;
+    justify-content: space-between;
+}
+.other-details .grid-left .spaced-content div {
+    font-size: 1rem;
+}
+.other-details .grid-right .spaced-content div {
+    font-size: 1rem;
+}
+
+
+@media only screen and (min-width: 769px){
+    h1 {
+        font-size: 3rem;
+    }    
+    .container .search_wrapper {
+        margin-top: 15%;
+        padding: 15px 15px;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+    .search_wrapper .input-container {
+        font-size: 1.2rem;
+        padding: 20px ;
+    }
+    .search_wrapper .input-container input { 
+        width: 70%;
+        padding: 20px 15px;
+    }
+   
+    .search_wrapper .error-container .error-text {
+        font-size: .9rem;
+    }
+    .search_wrapper .input-container .btn i {
+        font-size: 2.5rem;
+    }
+    .place {
+        display: none;
+    }
+    .current {
+        display: none;
+        width: 100%;
+    }
+    .container .active .current{
+        width: 90%;
+        display: flex;
+    }
+    
+    .current .others  {
+        width: 90%;
+        display: flex;
+        flex-direction: row;
+        /* margin-left: 10%; */
+    }
+    
+    .current .others .weather-condition-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 30px;
+        font-size: 2rem;
+        margin: 15px;
+    }
+    .current .others .other-details {
+        display: flex;
+        flex-direction: row;
+        padding: 20px;
+        margin-left: 40px;
+    }
+    .others .other-details .grid-left, .grid-right {
+        display: flex;
+        /* width: 90%; */
+        flex-direction: column;
+        justify-content: space-between;    
+        margin: 10px;
+        padding: 0 50px;
+    }
+
+    .others .other-details .grid-left .spaced-content {
+        display: flex;
+        justify-content: space-between;
+    }
+    /* .others .other-details .grid-right .spaced-content {
+        display: flex;
+        justify-content: space-between;
+    } */
+    .other-details .grid-left .spaced-content div {
+        margin: 0 50px;
+        font-size: 1.2rem;
+    }
+    /* .other-details .grid-left .spaced-content div {
+        margin: 0 50px;
+        font-size: 1.2rem;
+    } */
+
+}
+
+.place-wrapper{
+    display: flex;
+    justify-content: space-between;
+    
+
+}
+.place-wrapper .time-zone h1 {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size: 2rem;
+    font-weight: 100;
+}
+
+
